@@ -23,3 +23,4 @@ class ManagerDetail(models.Model):
     id_types = [('Adhr','Aadhaar'), ('Pn','Pan'), ('DL','Driving License'), ('Pp','Passport')]
     identity_type = models.CharField(choices=id_types, default='Aadhaar',max_length=20)
     identity_number = models.CharField(max_length=20)
+

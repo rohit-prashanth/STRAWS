@@ -1,0 +1,11 @@
+body{
+    background-image: url("/static/images/background-apple.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#items{
+ background-color: #4f4f4f;
+}
+

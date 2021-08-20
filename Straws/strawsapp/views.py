@@ -80,3 +80,10 @@ def w_signupform(request):
     else:
         worker_form = worker_signup_form()
         return render(request, 'w_signupform.html', {'w_form': worker_form})
+
+def update_table(request,item):
+    pass
+
+
+def table1(request):
+    return render(request,'billing_page.html')

@@ -26,5 +26,9 @@ urlpatterns = [
     path('admin_profile/',views.admin_profile,name='admin_profile'),
     path('user_logout/',views.user_logout,name='user_logout'),
     path('w_signupform/',views.w_signupform,name='w_signupform'),
+    path('update_table/<str:item>/',views.update_table,name='update_table'),
+    path('table1/',views.table1,name='table1'),
+
+
 
 ]
