@@ -48,6 +48,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'strawsapp.middlewares.MyProcessMiddleware',
+    'strawsapp.middlewares.MyExceptionMiddleware',
+    'strawsapp.middlewares.MyTemplateResponseMiddleware',
 ]
 
 ROOT_URLCONF = 'Straws.urls'
@@ -113,6 +116,17 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Email Notification
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 534
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'rohitprshnth09@gmail.com'
+EMAIL_HOST_PASSWORD='Pr@sh@nTh_1996'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 # Static files (CSS, JavaScript, Images)

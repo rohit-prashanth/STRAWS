@@ -6,6 +6,9 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .forms import worker_signup_form
 from .models import StoresList
+from django.core.mail import send_mail
+from django.conf import settings
+
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -42,6 +45,16 @@ def worker(request):
                 user = authenticate(username=uname,password=upass)
                 if user is not None:
                     login(request,user)
+                    to = 'rohitprshnth09@gmail.com'
+                    content = f'Mr {uname} logged in as Worker'
+                    print(to, content)
+                    send_mail(
+                        "testing",
+                        content,
+                        settings.EMAIL_HOST_USER,
+                        [to]
+
+                    )
                     return HttpResponseRedirect('/workers_profile/')
         else:
             worker_form = AuthenticationForm()
