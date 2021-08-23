@@ -8,7 +8,7 @@ from .forms import worker_signup_form
 from .models import StoresList
 from django.core.mail import send_mail
 from django.conf import settings
-
+from .forms import TableModelForm1
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -28,6 +28,12 @@ def shop_admin(request):
                     else:
                         messages.warning(request,'You are not authorised to login to Admin Page')
                         return HttpResponseRedirect('/shop_admin/')
+                else:
+                    messages.warning(request, 'You are not authorised to login to Admin Page')
+                    return HttpResponseRedirect('/shop_admin/')
+            else:
+                messages.warning(request, 'You are not authorised to login to Admin Page')
+                return HttpResponseRedirect('/shop_admin/')
 
         else:
             shop_admin_form = AuthenticationForm()
@@ -45,14 +51,16 @@ def worker(request):
                 user = authenticate(username=uname,password=upass)
                 if user is not None:
                     login(request,user)
-                    to = 'rohitprshnth09@gmail.com'
+                    to_1 = 'rohitprshnth09@gmail.com'
+                    to_2 = 'sathwik777@gmail.com'
                     content = f'Mr {uname} logged in as Worker'
-                    print(to, content)
+                    print(to_1, content)
+                    print(to_2,content)
                     send_mail(
                         "testing",
                         content,
                         settings.EMAIL_HOST_USER,
-                        [to]
+                        [to_1,to_2]
 
                     )
                     return HttpResponseRedirect('/workers_profile/')
@@ -64,7 +72,17 @@ def worker(request):
 
 def workers_profile(request):
     if request.user.is_authenticated:
-        return render(request,'workers_profile.html')
+        if request.method == "POST":
+            table_form = TableModelForm1(request.POST)
+            if table_form.is_valid():
+                table_form.save()
+                return HttpResponseRedirect('/workers_profile/')
+            else:
+                return HttpResponseRedirect('/workers_profile/')
+
+        else:
+            table_form = TableModelForm1()
+            return render(request,'workers_profile.html',{'form':table_form})
     else:
         return HttpResponseRedirect('/worker/')
 

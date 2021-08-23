@@ -24,3 +24,34 @@ class ManagerDetail(models.Model):
     identity_type = models.CharField(choices=id_types, default='Aadhaar',max_length=20)
     identity_number = models.CharField(max_length=20)
 
+class TablesHistoryDatabase(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm1(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm2(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm3(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
