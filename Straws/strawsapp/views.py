@@ -81,9 +81,13 @@ def workers_profile(request):
                 return HttpResponseRedirect('/workers_profile/')
 
         else:
-            table_form = TableModelForm1()
-            return render(request,'workers_profile.html',{'form':table_form})
-    else:
+            data = TableForm1.objects.first()
+            if data:
+                table_form = TableModelForm1(instance=data)
+                return render(request, 'workers_profile.html', {'form': table_form})
+            else:
+                table_form = TableModelForm1()
+                return render(request,'workers_profile.html',{'form':table_form})
         return HttpResponseRedirect('/worker/')
 
 def admin_profile(request):
