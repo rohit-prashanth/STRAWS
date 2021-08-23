@@ -28,6 +28,8 @@ urlpatterns = [
     path('w_signupform/',views.w_signupform,name='w_signupform'),
     path('update_table/<str:item>/',views.update_table,name='update_table'),
     path('table1/',views.table1,name='table1'),
+    path('checkout/<str:db>/',views.checkout,name='checkout'),
+
 
 
 

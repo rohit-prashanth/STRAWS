@@ -8,7 +8,8 @@ from .forms import worker_signup_form
 from .models import StoresList
 from django.core.mail import send_mail
 from django.conf import settings
-from .forms import TableModelForm1
+from .forms import TableModelForm1,TableModelForm2
+from .models import TableForm1,TablesHistoryDatabase
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -64,6 +65,14 @@ def worker(request):
 
                     )
                     return HttpResponseRedirect('/workers_profile/')
+                else:
+                    worker_form = AuthenticationForm()
+                    messages.warning(request, 'You are not authorised to login to Admin Page')
+                    return render(request, 'worker.html', {'w_form': worker_form})
+            else:
+                worker_form = AuthenticationForm()
+                messages.warning(request, 'You are not authorised to login to Admin Page')
+                return render(request, 'worker.html', {'w_form': worker_form})
         else:
             worker_form = AuthenticationForm()
             return render(request,'worker.html',{'w_form':worker_form})
@@ -83,12 +92,16 @@ def workers_profile(request):
         else:
             data = TableForm1.objects.first()
             if data:
-                table_form = TableModelForm1(instance=data)
-                return render(request, 'workers_profile.html', {'form': table_form})
+                table_form1 = TableModelForm1(instance=data)
+                #table_form2 = TableModelForm1(instance=data)
+                return render(request, 'workers_profile.html', {'form': table_form1,'data':data})
             else:
-                table_form = TableModelForm1()
-                return render(request,'workers_profile.html',{'form':table_form})
+                table_form1 = TableModelForm1()
+                table_form2 = TableModelForm2()
+                return render(request,'workers_profile.html',{'form1':table_form1,'form1':table_form2})
+    else:
         return HttpResponseRedirect('/worker/')
+
 
 def admin_profile(request):
     if request.user.is_authenticated:
@@ -112,6 +125,9 @@ def w_signupform(request):
             form.save()
             messages.success(request,'Successfully Created!')
             return HttpResponseRedirect('/w_signupform/')
+        else:
+            worker_form = worker_signup_form()
+            return render(request, 'w_signupform.html', {'w_form': worker_form})
     else:
         worker_form = worker_signup_form()
         return render(request, 'w_signupform.html', {'w_form': worker_form})
@@ -122,3 +138,18 @@ def update_table(request,item):
 
 def table1(request):
     return render(request,'billing_page.html')
+
+def checkout(request,db):
+    table_list=['TableForm1']
+    print(db,type(db))
+    try:
+        if table_list[0] == db :
+            d1 = TableForm1.objects.first()
+            data = TablesHistoryDatabase(name= d1.name,mobile_number=d1.mobile_number,items=d1.items,total_amount=d1.total_amount,payment_mode=d1.payment_mode)
+            data.save()
+            TableForm1.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+    except:
+        messages.info(request,'No Data Exists In the Form')
+        return HttpResponseRedirect('/workers_profile/')
+
