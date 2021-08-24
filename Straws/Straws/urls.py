@@ -28,9 +28,15 @@ urlpatterns = [
     path('w_signupform/',views.w_signupform,name='w_signupform'),
     path('update_table/<str:item>/',views.update_table,name='update_table'),
     path('table1/',views.table1,name='table1'),
+    path('table2/',views.table2,name='table2'),
+    path('table3/',views.table3,name='table3'),
+    path('table4/',views.table4,name='table4'),
+    path('table5/',views.table5,name='table5'),
+    path('table6/',views.table6,name='table6'),
+    path('table7/',views.table7,name='table7'),
+    path('table8/',views.table8,name='table8'),
+    path('table9/',views.table9,name='table9'),
+    path('table10/',views.table10,name='table10'),
     path('checkout/<str:db>/',views.checkout,name='checkout'),
-
-
-
 
 ]

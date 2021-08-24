@@ -55,3 +55,59 @@ class TableForm3(models.Model):
     total_amount = models.IntegerField()
     mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
     payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm4(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm5(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm6(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm7(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm8(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm9(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)
+
+class TableForm10(models.Model):
+    name = models.CharField(max_length=20)
+    mobile_number = models.CharField(max_length=20)
+    items = models.TextField()
+    total_amount = models.IntegerField()
+    mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
+    payment_mode = models.CharField(choices=mode_choice, default='Cash', max_length=50)

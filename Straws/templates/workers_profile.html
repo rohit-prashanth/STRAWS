@@ -5,26 +5,148 @@
     <a class="btn btn-secondary" href="{% url 'user_logout' %}" role="button">Logout</a>
 
     <br><br>
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Table #1
-              </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
-                    <form class="row g-3" text_align=center;  method="post" style="border-radius: 5px; background-color: #f2f2f2; padding: 20px; padding-left:250px;">
+<!--        <div class="accordion accordion-flush" id="accordionFlushExample">-->
+<!--          <div class="accordion-item">-->
+<!--            <h2 class="accordion-header" id="flush-headingOne">-->
+<!--              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">-->
+<!--                    Table #1-->
+<!--              </button>-->
+<!--            </h2>-->
+<!--            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">-->
+<!--              <div class="accordion-body">-->
+<!--                    <form class="row g-3" text_align=center;  method="post" style="border-radius: 5px; background-color: #f2f2f2; padding: 20px; padding-left:250px;">-->
+<!--                      {% csrf_token %}-->
+<!--                        <div class="col-12">-->
+<!--                          <label for="id_name" class="form-label">Order_Id:</label>-->
+<!--                          {{data.id}}-->
+<!--                        </div>-->
+<!--                      <div class="col-md-4">-->
+<!--                        <label for="id_name" class="form-label">Name:</label>-->
+<!--                        {{form1.name}}-->
+<!--                      </div>-->
+<!--                      <div class="col-md-4">-->
+<!--                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>-->
+<!--                        {{form1.mobile_number}}-->
+<!--                      </div>-->
+<!--                      <div class="col-12">-->
+<!--                        <label for="id_items" class="form-label">Items:</label>-->
+<!--                        {{form1.items}}-->
+<!--                      </div>-->
+<!--                      <div class="col-md-4">-->
+<!--                        <label for="id_total_amount" class="form-label">Total Amount:</label>-->
+<!--                          {{form1.total_amount}}-->
+<!--                      </div>-->
+<!--                      <div class="col-md-4">-->
+<!--                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>-->
+<!--                        {{form1.payment_mode}}-->
+<!--                      </div>-->
+<!--                      <div class="col-12">-->
+<!--                        <button type="submit" class="btn btn-warning">Save</button>-->
+<!--                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm1' %}" role="button">Checkout</a>-->
+<!--                      </div>-->
+<!--                      {% if messages %}-->
+<!--                          {% for msg in messages %}-->
+<!--                              <span style="color:Orange; padding-bottom: 5px;">-->
+<!--                                  {{msg}}-->
+<!--                              </span>-->
+<!--                          {% endfor %}-->
+<!--                      {% endif %}-->
+<!--                    </form>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="accordion-item">-->
+<!--            <h2 class="accordion-header" id="flush-headingTwo">-->
+<!--              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">-->
+<!--                Table #2-->
+<!--              </button>-->
+<!--            </h2>-->
+<!--            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">-->
+<!--              <div class="accordion-body">-->
+<!--                  <form class="row g-2" text_align=center; method="post" style="border-radius: 5px; background-color: #f2f2f2; padding: 20px; padding-left:250px;">-->
+<!--                      {% csrf_token %}-->
+<!--                        <div class="col-12">-->
+<!--                          <label for="id_name" class="form-label">Order_Id:</label>-->
+<!--                          {{data1.id}}-->
+<!--                        </div>-->
+<!--                      <div class="col-md-4">-->
+<!--                        <label for="id_name" class="form-label">Name:</label>-->
+<!--                        {{form2.name}}-->
+<!--                      </div>-->
+<!--                      <div class="col-md-4">-->
+<!--                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>-->
+<!--                        {{form2.mobile_number}}-->
+<!--                      </div>-->
+<!--                      <div class="col-12">-->
+<!--                        <label for="id_items" class="form-label">Items:</label>-->
+<!--                        {{form2.items}}-->
+<!--                      </div>-->
+<!--                      <div class="col-md-4">-->
+<!--                        <label for="id_total_amount" class="form-label">Total Amount:</label>-->
+<!--                          {{form2.total_amount}}-->
+<!--                      </div>-->
+<!--                      <div class="col-md-4">-->
+<!--                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>-->
+<!--                        {{form2.payment_mode}}-->
+<!--                      </div>-->
+<!--                      <div class="col-12">-->
+<!--                        <button type="submit" class="btn btn-warning">Save</button>-->
+<!--                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm2' %}" role="button">Checkout</a>-->
+<!--                      </div>-->
+<!--                      {% if messages %}-->
+<!--                          {% for msg in messages %}-->
+<!--                              <span style="color:Orange; padding-bottom: 5px;">-->
+<!--                                  {{msg}}-->
+<!--                              </span>-->
+<!--                          {% endfor %}-->
+<!--                      {% endif %}-->
+<!--                    </form>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+
+
+<!--modal Table #1-->
+
+
+            <h2>Table #1</h2>
+  <!-- Button to Open the Modal -->
+  {% if data1.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #1</h4>
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table1' %}" method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
                       {% csrf_token %}
                         <div class="col-12">
                           <label for="id_name" class="form-label">Order_Id:</label>
-                          {{data.id}}
+                          {{data1.id}}
                         </div>
-                      <div class="col-md-4">
+                      <div class="col-md-3">
                         <label for="id_name" class="form-label">Name:</label>
                         {{form1.name}}
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-3">
                         <label for="id_mobile_number" class="form-label">Mobile Number:</label>
                         {{form1.mobile_number}}
                       </div>
@@ -52,29 +174,55 @@
                           {% endfor %}
                       {% endif %}
                     </form>
-              </div>
-            </div>
-          </div>
+        </div>
 
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Table #2
-              </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
-                  <form class="row g-2" text_align=center; method="post" style="border-radius: 5px; background-color: #f2f2f2; padding: 20px; padding-left:250px;">
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+    <!--modal Table #2-->
+
+
+            <h2>Table #2</h2>
+  <!-- Button to Open the Modal -->
+  {% if data2.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal1">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #2</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table2' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
                       {% csrf_token %}
                         <div class="col-12">
-                          <label for="id_name" class="form-label">Order_Id:</label>
-                          {{data.id}}
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data2.id}}
                         </div>
-                      <div class="col-md-4">
+                      <div class="col-md-3">
                         <label for="id_name" class="form-label">Name:</label>
                         {{form2.name}}
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-3">
                         <label for="id_mobile_number" class="form-label">Mobile Number:</label>
                         {{form2.mobile_number}}
                       </div>
@@ -93,7 +241,6 @@
                       <div class="col-12">
                         <button type="submit" class="btn btn-warning">Save</button>
                         <a class="btn btn-success" href="{% url 'checkout' 'TableForm2' %}" role="button">Checkout</a>
-
                       </div>
                       {% if messages %}
                           {% for msg in messages %}
@@ -103,9 +250,625 @@
                           {% endfor %}
                       {% endif %}
                     </form>
-              </div>
-            </div>
-          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!--modal Table #3-->
+
+
+            <h2>Table #3</h2>
+  <!-- Button to Open the Modal -->
+  {% if data3.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal2">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal2">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #3</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table3' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
+                      {% csrf_token %}
+                        <div class="col-12">
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data3.id}}
+                        </div>
+                      <div class="col-md-3">
+                        <label for="id_name" class="form-label">Name:</label>
+                        {{form3.name}}
+                      </div>
+                      <div class="col-md-3">
+                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
+                        {{form3.mobile_number}}
+                      </div>
+                      <div class="col-12">
+                        <label for="id_items" class="form-label">Items:</label>
+                        {{form3.items}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_total_amount" class="form-label">Total Amount:</label>
+                          {{form3.total_amount}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
+                        {{form3.payment_mode}}
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning">Save</button>
+                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm3' %}" role="button">Checkout</a>
+                      </div>
+                      {% if messages %}
+                          {% for msg in messages %}
+                              <span style="color:Orange; padding-bottom: 5px;">
+                                  {{msg}}
+                              </span>
+                          {% endfor %}
+                      {% endif %}
+                    </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--modal Table #4-->
+
+
+            <h2>Table #4</h2>
+  <!-- Button to Open the Modal -->
+  {% if data4.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal3">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal3">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #4</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table4' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
+                      {% csrf_token %}
+                        <div class="col-12">
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data4.id}}
+                        </div>
+                      <div class="col-md-3">
+                        <label for="id_name" class="form-label">Name:</label>
+                        {{form4.name}}
+                      </div>
+                      <div class="col-md-3">
+                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
+                        {{form4.mobile_number}}
+                      </div>
+                      <div class="col-12">
+                        <label for="id_items" class="form-label">Items:</label>
+                        {{form4.items}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_total_amount" class="form-label">Total Amount:</label>
+                          {{form4.total_amount}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
+                        {{form4.payment_mode}}
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning">Save</button>
+                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm4' %}" role="button">Checkout</a>
+                      </div>
+                      {% if messages %}
+                          {% for msg in messages %}
+                              <span style="color:Orange; padding-bottom: 5px;">
+                                  {{msg}}
+                              </span>
+                          {% endfor %}
+                      {% endif %}
+                    </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--modal Table #5-->
+
+
+            <h2>Table #5</h2>
+  <!-- Button to Open the Modal -->
+  {% if data5.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal4">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal4">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #5</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table5' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
+                      {% csrf_token %}
+                        <div class="col-12">
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data5.id}}
+                        </div>
+                      <div class="col-md-3">
+                        <label for="id_name" class="form-label">Name:</label>
+                        {{form5.name}}
+                      </div>
+                      <div class="col-md-3">
+                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
+                        {{form5.mobile_number}}
+                      </div>
+                      <div class="col-12">
+                        <label for="id_items" class="form-label">Items:</label>
+                        {{form5.items}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_total_amount" class="form-label">Total Amount:</label>
+                          {{form5.total_amount}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
+                        {{form5.payment_mode}}
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning">Save</button>
+                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm5' %}" role="button">Checkout</a>
+                      </div>
+                      {% if messages %}
+                          {% for msg in messages %}
+                              <span style="color:Orange; padding-bottom: 5px;">
+                                  {{msg}}
+                              </span>
+                          {% endfor %}
+                      {% endif %}
+                    </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--modal Table #6-->
+
+
+            <h2>Table #6</h2>
+  <!-- Button to Open the Modal -->
+  {% if data6.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal5">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myMod5">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal5">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #6</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table6' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
+                      {% csrf_token %}
+                        <div class="col-12">
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data6.id}}
+                        </div>
+                      <div class="col-md-3">
+                        <label for="id_name" class="form-label">Name:</label>
+                        {{form6.name}}
+                      </div>
+                      <div class="col-md-3">
+                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
+                        {{form6.mobile_number}}
+                      </div>
+                      <div class="col-12">
+                        <label for="id_items" class="form-label">Items:</label>
+                        {{form6.items}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_total_amount" class="form-label">Total Amount:</label>
+                          {{form6.total_amount}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
+                        {{form6.payment_mode}}
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning">Save</button>
+                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm6' %}" role="button">Checkout</a>
+                      </div>
+                      {% if messages %}
+                          {% for msg in messages %}
+                              <span style="color:Orange; padding-bottom: 5px;">
+                                  {{msg}}
+                              </span>
+                          {% endfor %}
+                      {% endif %}
+                    </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--modal Table #7-->
+
+
+            <h2>Table #7</h2>
+  <!-- Button to Open the Modal -->
+  {% if data7.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal6">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModa6">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal6">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #7</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table7' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
+                      {% csrf_token %}
+                        <div class="col-12">
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data7.id}}
+                        </div>
+                      <div class="col-md-3">
+                        <label for="id_name" class="form-label">Name:</label>
+                        {{form7.name}}
+                      </div>
+                      <div class="col-md-3">
+                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
+                        {{form7.mobile_number}}
+                      </div>
+                      <div class="col-12">
+                        <label for="id_items" class="form-label">Items:</label>
+                        {{form7.items}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_total_amount" class="form-label">Total Amount:</label>
+                          {{form7.total_amount}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
+                        {{form7.payment_mode}}
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning">Save</button>
+                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm7' %}" role="button">Checkout</a>
+                      </div>
+                      {% if messages %}
+                          {% for msg in messages %}
+                              <span style="color:Orange; padding-bottom: 5px;">
+                                  {{msg}}
+                              </span>
+                          {% endfor %}
+                      {% endif %}
+                    </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--modal Table #8-->
+
+
+            <h2>Table #8</h2>
+  <!-- Button to Open the Modal -->
+  {% if data8.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal7">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal7">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal7">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #8</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table8' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
+                      {% csrf_token %}
+                        <div class="col-12">
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data8.id}}
+                        </div>
+                      <div class="col-md-3">
+                        <label for="id_name" class="form-label">Name:</label>
+                        {{form8.name}}
+                      </div>
+                      <div class="col-md-3">
+                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
+                        {{form8.mobile_number}}
+                      </div>
+                      <div class="col-12">
+                        <label for="id_items" class="form-label">Items:</label>
+                        {{form8.items}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_total_amount" class="form-label">Total Amount:</label>
+                          {{form8.total_amount}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
+                        {{form8.payment_mode}}
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning">Save</button>
+                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm8' %}" role="button">Checkout</a>
+                      </div>
+                      {% if messages %}
+                          {% for msg in messages %}
+                              <span style="color:Orange; padding-bottom: 5px;">
+                                  {{msg}}
+                              </span>
+                          {% endfor %}
+                      {% endif %}
+                    </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--modal Table #9-->
+
+
+            <h2>Table #9</h2>
+  <!-- Button to Open the Modal -->
+  {% if data9.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal8">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal8">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal8">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #9</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table9' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
+                      {% csrf_token %}
+                        <div class="col-12">
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data9.id}}
+                        </div>
+                      <div class="col-md-3">
+                        <label for="id_name" class="form-label">Name:</label>
+                        {{form9.name}}
+                      </div>
+                      <div class="col-md-3">
+                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
+                        {{form9.mobile_number}}
+                      </div>
+                      <div class="col-12">
+                        <label for="id_items" class="form-label">Items:</label>
+                        {{form9.items}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_total_amount" class="form-label">Total Amount:</label>
+                          {{form9.total_amount}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
+                        {{form9.payment_mode}}
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning">Save</button>
+                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm9' %}" role="button">Checkout</a>
+                      </div>
+                      {% if messages %}
+                          {% for msg in messages %}
+                              <span style="color:Orange; padding-bottom: 5px;">
+                                  {{msg}}
+                              </span>
+                          {% endfor %}
+                      {% endif %}
+                    </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--modal Table #10-->
+
+
+            <h2>Table #10</h2>
+  <!-- Button to Open the Modal -->
+  {% if data10.id %}
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal9">
+    {% else %}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal9">
+    {% endif%}
+    Orders
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal9">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Table #10</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                    <form class="row g-3" text_align="center" action="{% url 'table10' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
+                      {% csrf_token %}
+                        <div class="col-12">
+                          <label for="id_id" class="form-label">Order_Id:</label>
+                          {{data10.id}}
+                        </div>
+                      <div class="col-md-3">
+                        <label for="id_name" class="form-label">Name:</label>
+                        {{form10.name}}
+                      </div>
+                      <div class="col-md-3">
+                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
+                        {{form10.mobile_number}}
+                      </div>
+                      <div class="col-12">
+                        <label for="id_items" class="form-label">Items:</label>
+                        {{form10.items}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_total_amount" class="form-label">Total Amount:</label>
+                          {{form10.total_amount}}
+                      </div>
+                      <div class="col-md-4">
+                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
+                        {{form10.payment_mode}}
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning">Save</button>
+                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm10' %}" role="button">Checkout</a>
+                      </div>
+                      {% if messages %}
+                          {% for msg in messages %}
+                              <span style="color:Orange; padding-bottom: 5px;">
+                                  {{msg}}
+                              </span>
+                          {% endfor %}
+                      {% endif %}
+                    </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
             <!--
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingThree">
@@ -148,11 +911,11 @@
                         <button type="submit" class="btn btn-success">Check-out</button>
                       </div>
                       -->
-                    </form>
-              </div>
-            </div>
-          </div>
-        </div>
+<!--                    </form>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
 
 </div>
 
