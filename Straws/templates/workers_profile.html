@@ -5,132 +5,239 @@
     <a class="btn btn-secondary" href="{% url 'user_logout' %}" role="button">Logout</a>
 
     <br><br>
-<!--        <div class="accordion accordion-flush" id="accordionFlushExample">-->
-<!--          <div class="accordion-item">-->
-<!--            <h2 class="accordion-header" id="flush-headingOne">-->
-<!--              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">-->
-<!--                    Table #1-->
-<!--              </button>-->
-<!--            </h2>-->
-<!--            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">-->
-<!--              <div class="accordion-body">-->
-<!--                    <form class="row g-3" text_align=center;  method="post" style="border-radius: 5px; background-color: #f2f2f2; padding: 20px; padding-left:250px;">-->
-<!--                      {% csrf_token %}-->
-<!--                        <div class="col-12">-->
-<!--                          <label for="id_name" class="form-label">Order_Id:</label>-->
-<!--                          {{data.id}}-->
-<!--                        </div>-->
-<!--                      <div class="col-md-4">-->
-<!--                        <label for="id_name" class="form-label">Name:</label>-->
-<!--                        {{form1.name}}-->
-<!--                      </div>-->
-<!--                      <div class="col-md-4">-->
-<!--                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>-->
-<!--                        {{form1.mobile_number}}-->
-<!--                      </div>-->
-<!--                      <div class="col-12">-->
-<!--                        <label for="id_items" class="form-label">Items:</label>-->
-<!--                        {{form1.items}}-->
-<!--                      </div>-->
-<!--                      <div class="col-md-4">-->
-<!--                        <label for="id_total_amount" class="form-label">Total Amount:</label>-->
-<!--                          {{form1.total_amount}}-->
-<!--                      </div>-->
-<!--                      <div class="col-md-4">-->
-<!--                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>-->
-<!--                        {{form1.payment_mode}}-->
-<!--                      </div>-->
-<!--                      <div class="col-12">-->
-<!--                        <button type="submit" class="btn btn-warning">Save</button>-->
-<!--                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm1' %}" role="button">Checkout</a>-->
-<!--                      </div>-->
-<!--                      {% if messages %}-->
-<!--                          {% for msg in messages %}-->
-<!--                              <span style="color:Orange; padding-bottom: 5px;">-->
-<!--                                  {{msg}}-->
-<!--                              </span>-->
-<!--                          {% endfor %}-->
-<!--                      {% endif %}-->
-<!--                    </form>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <!-- Button to Table#1 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #1</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data1.id %} {{data1.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data1.id %} {{data1.items}} {% endif %}</p>
+              <!-- Button to Order -->
+              {% if data1.id %}
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+              {% else %}
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+              {% endif %}
+              Order
+            </button>
+            </button>
+            </div>
+        </div>
 
-<!--          <div class="accordion-item">-->
-<!--            <h2 class="accordion-header" id="flush-headingTwo">-->
-<!--              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">-->
-<!--                Table #2-->
-<!--              </button>-->
-<!--            </h2>-->
-<!--            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">-->
-<!--              <div class="accordion-body">-->
-<!--                  <form class="row g-2" text_align=center; method="post" style="border-radius: 5px; background-color: #f2f2f2; padding: 20px; padding-left:250px;">-->
-<!--                      {% csrf_token %}-->
-<!--                        <div class="col-12">-->
-<!--                          <label for="id_name" class="form-label">Order_Id:</label>-->
-<!--                          {{data1.id}}-->
-<!--                        </div>-->
-<!--                      <div class="col-md-4">-->
-<!--                        <label for="id_name" class="form-label">Name:</label>-->
-<!--                        {{form2.name}}-->
-<!--                      </div>-->
-<!--                      <div class="col-md-4">-->
-<!--                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>-->
-<!--                        {{form2.mobile_number}}-->
-<!--                      </div>-->
-<!--                      <div class="col-12">-->
-<!--                        <label for="id_items" class="form-label">Items:</label>-->
-<!--                        {{form2.items}}-->
-<!--                      </div>-->
-<!--                      <div class="col-md-4">-->
-<!--                        <label for="id_total_amount" class="form-label">Total Amount:</label>-->
-<!--                          {{form2.total_amount}}-->
-<!--                      </div>-->
-<!--                      <div class="col-md-4">-->
-<!--                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>-->
-<!--                        {{form2.payment_mode}}-->
-<!--                      </div>-->
-<!--                      <div class="col-12">-->
-<!--                        <button type="submit" class="btn btn-warning">Save</button>-->
-<!--                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm2' %}" role="button">Checkout</a>-->
-<!--                      </div>-->
-<!--                      {% if messages %}-->
-<!--                          {% for msg in messages %}-->
-<!--                              <span style="color:Orange; padding-bottom: 5px;">-->
-<!--                                  {{msg}}-->
-<!--                              </span>-->
-<!--                          {% endfor %}-->
-<!--                      {% endif %}-->
-<!--                    </form>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="col-sm">
+       <!-- Button to Table#2 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #2</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data2.id %} {{data2.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data2.id %} {{data2.items}} {% endif %}</p>
+               <!-- Button to Order -->
+                {% if data2.id %}
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal1">
+                  {% else %}
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                  {% endif%}
+                  Order
+                </button>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+      <!-- Button to Table#3 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #3</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data3.id %} {{data3.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data3.id %} {{data3.items}} {% endif %}</p>
+               <!-- Button to Order -->
+                  {% if data3.id %}
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal2">
+                    {% else %}
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+                    {% endif%}
+                    Order
+                  </button>
+                  </button>
+            </div>
+        </div>
+    </div>
   </div>
 </div>
 
+<br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <!-- Button to Table#4 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #4</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data4.id %} {{data4.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data4.id %} {{data4.items}} {% endif %}</p>
+              <!-- Button to Order -->
+              {% if data4.id %}
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal3">
+                {% else %}
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+                {% endif%}
+                Order
+              </button>
+              </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm">
+       <!-- Button to Table#5 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #5</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data5.id %} {{data5.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data5.id %} {{data5.items}} {% endif %}</p>
+               <!-- Button to Order -->
+              {% if data5.id %}
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal4">
+                {% else %}
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
+                {% endif%}
+                Order
+              </button>
+              </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+      <!-- Button to Table#6 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #6</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data6.id %} {{data6.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data6.id %} {{data6.items}} {% endif %}</p>
+               <!-- Button to Order -->
+                {% if data6.id %}
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal5">
+                  {% else %}
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5">
+                  {% endif%}
+                  Order
+                </button>
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+  <br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <!-- Button to Table#7 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #7</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data7.id %} {{data7.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data7.id %} {{data7.items}} {% endif %}</p>
+              <!-- Button to Order -->
+              {% if data7.id %}
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal6">
+                {% else %}
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModa6">
+                {% endif%}
+                Order
+              </button>
+              </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm">
+       <!-- Button to Table#8 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #8</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data8.id %} {{data8.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data8.id %} {{data8.items}} {% endif %}</p>
+              <!-- Button to Order -->
+                  {% if data8.id %}
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal7">
+                    {% else %}
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal7">
+                    {% endif%}
+                    Order
+                  </button>
+                  </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+      <!-- Button to Table#9 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #9</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data9.id %} {{data9.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data9.id %} {{data9.items}} {% endif %}</p>
+              <!-- Button to Order -->
+                {% if data9.id %}
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal8">
+                  {% else %}
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal8">
+                  {% endif%}
+                  Order
+                </button>
+                </button>
+
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+
+  <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <!-- Button to Table#10 Modal -->
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Table #10</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Customer Name: {% if data10.id %} {{data10.name|title}} {% endif %}</h6>
+              <p class="card-text text-muted"><b>Orders:</b> {% if data10.id %} {{data10.items}} {% endif %}</p>
+                  <!-- Button to Order -->
+                  {% if data10.id %}
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal9">
+                    {% else %}
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal9">
+                    {% endif%}
+                    Order
+                  </button>
+                  </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+
+    </div>
+    <div class="col-sm">
+
+    </div>
+  </div>
+</div>
+
+<br><br>
 
 
 <!--modal Table #1-->
-
-
-            <h2>Table #1</h2>
-  <!-- Button to Open the Modal -->
-  {% if data1.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog modal-lg">
@@ -197,18 +304,6 @@
 
 
     <!--modal Table #2-->
-
-
-            <h2>Table #2</h2>
-  <!-- Button to Open the Modal -->
-  {% if data2.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal1">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal1">
     <div class="modal-dialog modal-lg">
@@ -277,17 +372,6 @@
 
   <!--modal Table #3-->
 
-
-            <h2>Table #3</h2>
-  <!-- Button to Open the Modal -->
-  {% if data3.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal2">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal2">
     <div class="modal-dialog modal-lg">
@@ -352,18 +436,6 @@
 
 
   <!--modal Table #4-->
-
-
-            <h2>Table #4</h2>
-  <!-- Button to Open the Modal -->
-  {% if data4.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal3">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal3">
     <div class="modal-dialog modal-lg">
@@ -428,18 +500,6 @@
 
 
   <!--modal Table #5-->
-
-
-            <h2>Table #5</h2>
-  <!-- Button to Open the Modal -->
-  {% if data5.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal4">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal4">
     <div class="modal-dialog modal-lg">
@@ -505,18 +565,6 @@
 
 
   <!--modal Table #6-->
-
-
-            <h2>Table #6</h2>
-  <!-- Button to Open the Modal -->
-  {% if data6.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal5">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myMod5">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal5">
     <div class="modal-dialog modal-lg">
@@ -579,19 +627,8 @@
     </div>
   </div>
 
+
   <!--modal Table #7-->
-
-
-            <h2>Table #7</h2>
-  <!-- Button to Open the Modal -->
-  {% if data7.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal6">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModa6">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal6">
     <div class="modal-dialog modal-lg">
@@ -654,19 +691,8 @@
     </div>
   </div>
 
+
   <!--modal Table #8-->
-
-
-            <h2>Table #8</h2>
-  <!-- Button to Open the Modal -->
-  {% if data8.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal7">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal7">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal7">
     <div class="modal-dialog modal-lg">
@@ -730,19 +756,8 @@
   </div>
 
 
+
   <!--modal Table #9-->
-
-
-            <h2>Table #9</h2>
-  <!-- Button to Open the Modal -->
-  {% if data9.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal8">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal8">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal8">
     <div class="modal-dialog modal-lg">
@@ -805,19 +820,9 @@
     </div>
   </div>
 
+
+
   <!--modal Table #10-->
-
-
-            <h2>Table #10</h2>
-  <!-- Button to Open the Modal -->
-  {% if data10.id %}
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal9">
-    {% else %}
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal9">
-    {% endif%}
-    Order
-  </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal9">
     <div class="modal-dialog modal-lg">

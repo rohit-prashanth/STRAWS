@@ -3,7 +3,7 @@ from .models import TablesHistoryDatabase,TableForm1,TableForm2,TableForm3,Table
 # Register your models here.
 @admin.register(TablesHistoryDatabase)
 class TableFormAdmin(admin.ModelAdmin):
-    list_display = ['id','name','mobile_number','items','total_amount','payment_mode']
+    list_display = ['id','name','mobile_number','date','items','total_amount','payment_mode']
 
 @admin.register(TableForm1)
 class TableFormAdmin(admin.ModelAdmin):

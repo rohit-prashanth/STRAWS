@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class WorkersDetail(models.Model):
@@ -27,6 +28,7 @@ class ManagerDetail(models.Model):
 class TablesHistoryDatabase(models.Model):
     name = models.CharField(max_length=20)
     mobile_number = models.CharField(max_length=20)
+    date = models.DateTimeField(default=timezone.now)
     items = models.TextField()
     total_amount = models.IntegerField()
     mode_choice = [('Cash','Cash'),('UPI','UPI'),('Card Payment','Card Payment')]
