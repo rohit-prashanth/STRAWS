@@ -17,12 +17,14 @@
               <!-- Button to Order -->
               {% if data1.id %}
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+              Modify
+              </button>
               {% else %}
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Order
+            </button>
               {% endif %}
-              Order
-            </button>
-            </button>
+
             </div>
         </div>
 
@@ -37,12 +39,15 @@
                <!-- Button to Order -->
                 {% if data2.id %}
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal1">
+                      Modify
+                </button>
                   {% else %}
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                        Order
+                </button>
                   {% endif%}
-                  Order
-                </button>
-                </button>
+
+
             </div>
         </div>
     </div>
@@ -56,12 +61,14 @@
                <!-- Button to Order -->
                   {% if data3.id %}
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal2">
+                        Modify
+                </button>
                     {% else %}
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+                          Order
+                </button>
                     {% endif%}
-                    Order
-                  </button>
-                  </button>
+
             </div>
         </div>
     </div>
@@ -82,12 +89,14 @@
               <!-- Button to Order -->
               {% if data4.id %}
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal3">
+                    Modify
+                </button>
                 {% else %}
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+                      Order
+                </button>
                 {% endif%}
-                Order
-              </button>
-              </button>
+
             </div>
         </div>
 
@@ -102,12 +111,13 @@
                <!-- Button to Order -->
               {% if data5.id %}
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal4">
+                    Modify
+                </button>
                 {% else %}
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
+                      Order
+                </button>
                 {% endif%}
-                Order
-              </button>
-              </button>
 
             </div>
         </div>
@@ -122,12 +132,14 @@
                <!-- Button to Order -->
                 {% if data6.id %}
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal5">
+                      Modify
+                </button>
                   {% else %}
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5">
+                        Order
+                </button>
                   {% endif%}
-                  Order
-                </button>
-                </button>
+
             </div>
         </div>
     </div>
@@ -148,12 +160,14 @@
               <!-- Button to Order -->
               {% if data7.id %}
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal6">
+                    Modify
+                </button>
                 {% else %}
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal6">
+                      Order
+                </button>
                 {% endif%}
-                Order
-              </button>
-              </button>
+
             </div>
         </div>
 
@@ -168,12 +182,14 @@
               <!-- Button to Order -->
                   {% if data8.id %}
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal7">
+                        Modify
+                </button>
                     {% else %}
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal7">
+                          Order
+                </button>
                     {% endif%}
-                    Order
-                  </button>
-                  </button>
+
 
             </div>
         </div>
@@ -188,12 +204,14 @@
               <!-- Button to Order -->
                 {% if data9.id %}
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal8">
+                      Modify
+                </button>
                   {% else %}
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal8">
+                        Order
+                </button>
                   {% endif%}
-                  Order
-                </button>
-                </button>
+
 
             </div>
         </div>
@@ -202,7 +220,6 @@
 </div>
 
 <br><br>
-
 
   <div class="container">
   <div class="row">
@@ -216,12 +233,14 @@
                   <!-- Button to Order -->
                   {% if data10.id %}
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal9">
+                        Modify
+                </button>
                     {% else %}
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal9">
+                          Order
+                </button>
                     {% endif%}
-                    Order
-                  </button>
-                  </button>
+
             </div>
         </div>
     </div>
@@ -253,44 +272,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table1' %}" method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_name" class="form-label">Order_Id:</label>
-                          {{data1.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form1.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form1.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form1.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form1.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form1.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm1' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+              <form action="{% url 'table1' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data1.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form1.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form1.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form1.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form1.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form1.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm1' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm1' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -317,44 +344,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table2' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data2.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form2.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form2.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form2.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form2.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form2.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm2' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                    <form action="{% url 'table2' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data2.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form2.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form2.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form2.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form2.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form2.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm2' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm2' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -385,44 +420,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table3' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data3.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form3.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form3.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form3.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form3.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form3.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm3' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                    <form action="{% url 'table3' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data3.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form3.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form3.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form3.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form3.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form3.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm3' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm3' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -449,44 +492,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table4' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data4.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form4.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form4.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form4.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form4.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form4.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm4' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                    <form action="{% url 'table4' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data4.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form4.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form4.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form4.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form4.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form4.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm4' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm4' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -513,44 +564,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table5' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data5.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form5.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form5.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form5.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form5.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form5.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm5' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                    <form action="{% url 'table5' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data5.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form5.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form5.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form5.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form5.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form5.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm5' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm5' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -578,44 +637,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table6' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data6.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form6.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form6.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form6.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form6.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form6.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm6' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                   <form action="{% url 'table6' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data6.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form6.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form6.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form6.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form6.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form6.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm6' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm6' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -642,44 +709,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table7' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data7.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form7.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form7.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form7.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form7.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form7.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm7' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                    <form action="{% url 'table7' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data7.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form7.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form7.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form7.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form7.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form7.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm7' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm7' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -706,44 +781,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table8' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data8.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form8.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form8.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form8.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form8.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form8.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm8' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                    <form action="{% url 'table8' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data8.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form8.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form8.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form8.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form8.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form8.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm8' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm8' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -771,44 +854,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table9' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data9.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form9.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form9.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form9.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form9.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form9.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm9' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                    <form action="{% url 'table9' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data9.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form9.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form9.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form9.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form9.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form9.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm9' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm9' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->
@@ -836,44 +927,52 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-                    <form class="row g-3" text_align="center" action="{% url 'table10' %}"  method="post" style="border-radius: 5px; background-color: #f2f2f2; position: center;">
-                      {% csrf_token %}
-                        <div class="col-12">
-                          <label for="id_id" class="form-label">Order_Id:</label>
-                          {{data10.id}}
-                        </div>
-                      <div class="col-md-3">
-                        <label for="id_name" class="form-label">Name:</label>
-                        {{form10.name}}
-                      </div>
-                      <div class="col-md-3">
-                        <label for="id_mobile_number" class="form-label">Mobile Number:</label>
-                        {{form10.mobile_number}}
-                      </div>
-                      <div class="col-12">
-                        <label for="id_items" class="form-label">Items:</label>
-                        {{form10.items}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_total_amount" class="form-label">Total Amount:</label>
-                          {{form10.total_amount}}
-                      </div>
-                      <div class="col-md-4">
-                        <label for="id_payment_mode" class="form-label">Mode Of Payment:</label>
-                        {{form10.payment_mode}}
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning">Save</button>
-                        <a class="btn btn-success" href="{% url 'checkout' 'TableForm10' %}" role="button">Checkout</a>
-                      </div>
-                      {% if messages %}
+                    <form action="{% url 'table10' %}" method="post" style="background-color: #f2f2f2; padding: 2px;">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-md-12 mb-1">
+                    <label for="id_id" class="text text-muted">Order_Id:</label>
+                    {{data10.id}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_name">Name:</label>
+                      {{form10.name}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_mobile_number">Mobile Number:</label>
+                      {{form10.mobile_number}}
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                      <label for="id_items">Items:</label>
+                      {{form10.items}}
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="id_total_amount">Total Amount:</label>
+                      {{form10.total_amount}}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="id_payment_mode">Payment Mode:</label>
+                      {{form10.payment_mode}}
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Save</button>
+                <a class="btn btn-success" href="{% url 'checkout' 'TableForm10' %}" role="button">Checkout</a>
+                <a class="btn btn-success" href="{% url 'clear' 'TableForm10' %}" role="button">clear</a>
+                {% if messages %}
                           {% for msg in messages %}
                               <span style="color:Orange; padding-bottom: 5px;">
                                   {{msg}}
                               </span>
                           {% endfor %}
                       {% endif %}
-                    </form>
+              </form>
         </div>
 
         <!-- Modal footer -->

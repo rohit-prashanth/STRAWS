@@ -38,5 +38,6 @@ urlpatterns = [
     path('table9/',views.table9,name='table9'),
     path('table10/',views.table10,name='table10'),
     path('checkout/<str:db>/',views.checkout,name='checkout'),
+    path('clear/<str:db>/',views.clear,name='clear'),
 
 ]

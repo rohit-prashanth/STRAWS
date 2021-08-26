@@ -355,6 +355,44 @@ def table10(request):
     else:
         return HttpResponseRedirect('/worker/')
 
+def clear(request,db):
+    table_list=['TableForm1','TableForm2','TableForm3','TableForm4','TableForm5','TableForm6','TableForm7','TableForm8','TableForm9','TableForm10']
+    try:
+        if table_list[0] == db :
+            TableForm1.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[1] == db :
+            TableForm2.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[2] == db :
+            TableForm3.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[3] == db :
+            TableForm4.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[4] == db :
+            TableForm5.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[5] == db :
+            TableForm6.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[6] == db :
+            TableForm7.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[7] == db :
+            TableForm8.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[8] == db :
+            TableForm9.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+        if table_list[9] == db :
+            TableForm10.objects.all().delete()
+            return HttpResponseRedirect('/workers_profile/')
+    except:
+        messages.info(request, 'No Data Exists In the Form')
+        return HttpResponseRedirect('/workers_profile/')
+
+
 
 def checkout(request,db):
     table_list=['TableForm1','TableForm2','TableForm3','TableForm4','TableForm5','TableForm6','TableForm7','TableForm8','TableForm9','TableForm10']
